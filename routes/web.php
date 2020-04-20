@@ -14,7 +14,9 @@
 
 Auth::routes();
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::group(['domain' => '{subdomain}.localhost'], function () {
      Route::get('/', function($subdomain){
@@ -37,9 +39,6 @@ Route::group(['domain' => '{subdomain}.localhost'], function () {
 //     });
 // });
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/dashboard', 'HomeController@index');
 // Route::get('/backoffice', 'AdminController@index');
